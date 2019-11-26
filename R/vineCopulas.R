@@ -31,7 +31,7 @@ validVineCopula <- function(object) {
   if (length(object@copulas) != (dim * (dim - 1) / 2)) {
     return("Number of provided copulas does not match given dimension.")
   }
-  if (!any(unlist(lapply(object@copulas, function(x) is(x, "copula"))))) {
+  if (!any(sapply(object@copulas, function(x) is(x, "copula") | is(x, "indepCopula")))) {
     return("Not all provided copulas are indeed copulas.")
   }
   p.n <- length(object@parameters)
@@ -51,7 +51,8 @@ setOldClass("RVineMatrix")
 
 setClass("vineCopula",
          representation = representation(
-           copulas = "list", dimension = "integer",
+           copulas = "list",
+           dimension = "integer",
            RVM = "RVineMatrix"
          ),
          prototype = prototype(RVM = structure(list(), class = "RVineMatrix")),
@@ -106,20 +107,41 @@ vineCopula <- function(RVM, type = "CVine") { # RVM <- 4L
 
   ltr <- lower.tri(RVM$Matrix)
   copDef <- cbind(RVM$family[ltr], RVM$par[ltr], RVM$par2[ltr])
-  copulas <- rev(apply(copDef, 1, function(x) {
-    copulaFromFamilyIndex(x[1], x[2], x[3])
-  }))
+  copulas <- rev(apply(copDef, 1, function(x) BiCop2copula(x[1], x[2], x[3])))
 
   new("vineCopula",
-      copulas = copulas, dimension = as.integer(nrow(RVM$Matrix)),
+      copulas = copulas,
+      dimension = as.integer(nrow(RVM$Matrix)),
       RVM = RVM,
-      parameters = unlist(sapply(copulas, function(x) x@parameters)),
-      param.names = unlist(sapply(copulas, function(x) x@param.names)),
-      param.lowbnd = unlist(sapply(copulas, function(x) x@param.lowbnd)),
-      param.upbnd = unlist(sapply(copulas, function(x) x@param.upbnd)),
+      parameters = unlist(
+        sapply(
+          copulas,
+          function(x) tryCatch(x@parameters, error = function(e) 0)
+        )
+      ),
+      param.names = unlist(
+        sapply(
+          copulas,
+          function(x) tryCatch(x@param.names, error = function(e) "")
+        )
+      ),
+      param.lowbnd = unlist(
+        sapply(
+          copulas,
+          function(x) tryCatch(x@param.lowbnd, error = function(e) 0)
+        )
+      ),
+      param.upbnd = unlist(
+        sapply(
+          copulas,
+          function(x) tryCatch(x@param.upbnd, error = function(e) 0)
+        )
+      ),
       fullname = paste("RVine copula family.")
   )
 }
+
+
 
 showVineCopula <- function(object) {
   dim <- object@dimension
