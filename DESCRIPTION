@@ -1,5 +1,5 @@
 Package: VC2copula
-Title: Extends the 'copula' package with families and models from 'VineCopula'.
+Title: Objects conversion between package VineCopula and copula
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Thomas",
@@ -14,3 +14,11 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/tnagler/VC2copula
 BugReports: https://github.com/tnagler/VC2copula/issues
+Depends:
+  copula
+Imports: 
+  VineCopula (>= 2.3.0),
+  methods
+Suggests:
+  lattice
+RoxygenNote: 7.0.0
