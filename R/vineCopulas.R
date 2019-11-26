@@ -116,25 +116,25 @@ vineCopula <- function(RVM, type = "CVine") { # RVM <- 4L
       parameters = unlist(
         sapply(
           copulas,
-          function(x) tryCatch(x@parameters, error = function(e) 0)
+          function(x) if(is(x, "indepCopula")) 0 else x@parameters
         )
       ),
       param.names = unlist(
         sapply(
           copulas,
-          function(x) tryCatch(x@param.names, error = function(e) "")
+          function(x) if(is(x, "indepCopula")) "" else x@param.names
         )
       ),
       param.lowbnd = unlist(
         sapply(
           copulas,
-          function(x) tryCatch(x@param.lowbnd, error = function(e) 0)
+          function(x) if(is(x, "indepCopula")) 0 else x@param.lowbnd
         )
       ),
       param.upbnd = unlist(
         sapply(
           copulas,
-          function(x) tryCatch(x@param.upbnd, error = function(e) 0)
+          function(x) if(is(x, "indepCopula")) 0 else x@param.upbnd
         )
       ),
       fullname = paste("RVine copula family.")
@@ -208,7 +208,7 @@ fitVineCop <- function(copula, data,
   }
   vineCop <- vineCopula(RVM)
 
-  new("fitCopula",
+  new(getClass("vineCopula", where = "VC2copula"),
       copula = vineCop,
       estimate = vineCop@parameters,
       var.est = matrix(NA),

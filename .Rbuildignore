@@ -3,3 +3,4 @@
 ^appveyor\.yml$
 ^\.github/workflows/R-CMD-check\.yaml$
 ^LICENSE\.md$
+.github/
