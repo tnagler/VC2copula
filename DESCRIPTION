@@ -1,0 +1,14 @@
+Package: VC2copula
+Title: Extends the 'copula' package with families and models from 'VineCopula'.
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Thomas",
+           family = "Nagler",
+           role = c("aut", "cre"),
+           email = "mail@tnagler.com")
+Description: Extends the 'copula' package with families and models from 
+  'VineCopula'.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
