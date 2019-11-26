@@ -208,7 +208,7 @@ fitVineCop <- function(copula, data,
   }
   vineCop <- vineCopula(RVM)
 
-  new(getClass("vineCopula", where = "VC2copula"),
+  new("fitCopula",
       copula = vineCop,
       estimate = vineCop@parameters,
       var.est = matrix(NA),

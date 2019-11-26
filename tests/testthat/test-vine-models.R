@@ -14,6 +14,7 @@ test_that("Vine copula models work", {
   expect_output(show(cop))
 
   expect_error(vineCopula(2))
+  expect_error(vineCopula(as.integer(1)))
   expect_error(
     new(getClass("vineCopula", where = "VC2copula"),
         copulas = lapply(1:3, function(i) "a"),
@@ -65,5 +66,3 @@ test_that("Vine copula models work", {
         param.upbnd = rep(1, 2))
   )
 })
-
-library(copula)
