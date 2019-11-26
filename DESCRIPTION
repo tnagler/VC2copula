@@ -15,10 +15,12 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/tnagler/VC2copula
 BugReports: https://github.com/tnagler/VC2copula/issues
 Depends:
-  copula
+  copula (>= 0.999-19.1)
 Imports: 
   VineCopula (>= 2.3.0),
   methods
 Suggests:
   lattice
 RoxygenNote: 7.0.0
+Remotes:
+    tnagler/VineCopula
