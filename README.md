@@ -1,6 +1,7 @@
 # VC2copula
 
 <!-- badges: start -->
+[![R build status](https://github.com/tnagler/VC2copula/workflows/R-CMD-check/badge.svg)](https://github.com/tnagler/VC2copula)
 <!-- badges: end -->
 
 The goal of VC2copula is to extend the 'copula' package with families and models 
