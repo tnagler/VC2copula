@@ -14,7 +14,7 @@
 #' @param par2 second parameter.
 #' @param obj [BiCop()] object containing the family and parameter specification.
 
-#' @return An object inherting [copula-class] corresponding to the
+#' @return An object inheriting [copula-class] corresponding to the
 #' specific family.
 #' @aliases copulaFromFamilyIndex
 #' @examples

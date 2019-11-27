@@ -19,7 +19,7 @@ copulaFromFamilyIndex(family, par, par2 = 0)
 \item{obj}{\code{\link[=BiCop]{BiCop()}} object containing the family and parameter specification.}
 }
 \value{
-An object inherting \linkS4class{copula} corresponding to the
+An object inheriting \linkS4class{copula} corresponding to the
 specific family.
 }
 \description{
