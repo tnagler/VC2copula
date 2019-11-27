@@ -6,10 +6,12 @@
 [![Codecov status](https://codecov.io/gh/tnagler/VC2copula/branch/master/graph/badge.svg)](https://codecov.io/gh/tnagler/VC2copula/branch/master)
 <!-- badges: end -->
 
-VC2copula extens the [copula](https://cran.r-project.org/web/packages/copula/index.html) 
+------------------------------
+
+VC2copula extends the [copula](https://cran.r-project.org/web/packages/copula/index.html) 
 package with families and models from [VineCopula](http://tnagler.github.io/VineCopula/). 
-This functionality was previously part of 'VineCopula', but is now provided as 
-a stand-alone version.
+This functionality was previously part of [VineCopula](http://tnagler.github.io/VineCopula/), 
+but is now provided as a stand-alone version.
 
 ## Installation
 
@@ -24,6 +26,8 @@ and the development version with
 ``` r
 devtools::install_github("tnagler/VC2copula")
 ```
+
+------------------------------
 
 ## Functionality
 
@@ -67,4 +71,11 @@ vine <- vineCopula(as.integer(4))
 fit <- fitCopula(vine, daxreturns[, 1:4])
 pairs(rCopula(500, fit@copula))
 ```
+
+------------------------------
+
+## Documentation
+
+For a full overview of functions and classes, see the [package website](https://tnagler.github.io/VC2copula).
+
 
