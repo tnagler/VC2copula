@@ -3,6 +3,7 @@
 <!-- badges: start -->
 [![R build status](https://github.com/tnagler/VC2copula/workflows/R-CMD-check/badge.svg)](https://github.com/tnagler/VC2copula)
 [![CRAN status](https://www.r-pkg.org/badges/version/VC2copula)](https://CRAN.R-project.org/package=VC2copula)
+[![Codecov status](https://codecov.io/gh/tnagler/VC2copula/branch/master/graph/badge.svg)](https://codecov.io/gh/tnagler/VC2copula/branch/master)
 <!-- badges: end -->
 
 The goal of VC2copula is to extend the 'copula' package with families and models 
