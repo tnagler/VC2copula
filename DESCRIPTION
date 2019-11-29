@@ -24,6 +24,4 @@ Suggests:
     testthat (>= 2.1.0),
     spelling
 RoxygenNote: 7.0.0
-Remotes:
-    tnagler/VineCopula
 Language: en-US
