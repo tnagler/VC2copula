@@ -1,5 +1,5 @@
 Package: VC2copula
-Title: Objects conversion between package VineCopula and copula
+Title: Object Conversion Between Packages 'VineCopula' and 'copula'
 Version: 0.1.0
 Authors@R: 
     person(given = "Thomas",
