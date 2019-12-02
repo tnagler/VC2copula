@@ -8,7 +8,7 @@
 
 ------------------------------
 
-VC2copula extends the [copula](https://cran.r-project.org/web/packages/copula/index.html) 
+VC2copula extends the [copula](https://CRAN.R-project.org/package=copula) 
 package with families and models from [VineCopula](http://tnagler.github.io/VineCopula/). 
 This functionality was previously part of [VineCopula](http://tnagler.github.io/VineCopula/), 
 but is now provided as a stand-alone version.
