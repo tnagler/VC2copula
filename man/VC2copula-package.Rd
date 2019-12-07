@@ -4,10 +4,12 @@
 \name{VC2copula-package}
 \alias{VC2copula}
 \alias{VC2copula-package}
-\title{VC2copula: Objects conversion between package VineCopula and copula}
+\title{VC2copula: Extend the 'copula' Package with Families and Models from 'VineCopula'}
 \description{
-Extends the 'copula' package with families and models from 
-  'VineCopula'.
+Provides new classes for (rotated) BB1, BB6, BB7, BB8, and 
+  Tawn copulas, extends the existing Gumbel and Clayton families with 
+  rotations, and allows to set up a vine copula model using the 'copula' API.
+  Corresponding objects from the 'VineCopula' API can easily be converted.
 }
 \seealso{
 Useful links:
@@ -19,6 +21,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Thomas Nagler \email{mail@tnagler.com}
+
+Other contributors:
+\itemize{
+  \item Benedikt Graeler [contributor]
+}
 
 }
 \keyword{internal}

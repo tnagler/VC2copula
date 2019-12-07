@@ -1,13 +1,18 @@
 Package: VC2copula
-Title: Object Conversion Between Packages 'VineCopula' and 'copula'
+Title: Extend the 'copula' Package with Families and Models from 'VineCopula'
 Version: 0.1.0
 Authors@R: 
-    person(given = "Thomas",
-           family = "Nagler",
-           role = c("aut", "cre"),
-           email = "mail@tnagler.com")
-Description: Extends the 'copula' package with families and models from 
-  'VineCopula'.
+    c(person(given = "Thomas",
+            family = "Nagler",
+            role = c("aut", "cre"),
+            email = "mail@tnagler.com"),
+      person(given = "Benedikt",
+             family = "Graeler",
+             role = "ctb"))
+Description: Provides new classes for (rotated) BB1, BB6, BB7, BB8, and 
+  Tawn copulas, extends the existing Gumbel and Clayton families with 
+  rotations, and allows to set up a vine copula model using the 'copula' API.
+  Corresponding objects from the 'VineCopula' API can easily be converted.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
