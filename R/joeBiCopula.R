@@ -131,7 +131,7 @@ r270JoeBiCopula <- function(param = -2) {
   )
 }
 
-setMethod("iTau", signature = c("joeCopula", "ANY"), BCiTau)
-setMethod("iTau", signature = c("r90JoeCopula", "ANY"), BCiTau)
-setMethod("iTau", signature = c("surJoeCopula", "ANY"), BCiTau)
-setMethod("iTau", signature = c("r270JoeCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("joeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r90JoeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("surJoeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r270JoeBiCopula", "ANY"), BCiTau)
