@@ -33,6 +33,8 @@
 #'
 #' showClass("tawnT1Copula")
 NULL
+
+#' @exportClass tawnT1Copula surTawnT1Copula r90TawnT1Copula r270TawnT1Copula
 generateClass("tawnT1Copula")
 generateClass("surTawnT1Copula")
 generateClass("r90TawnT1Copula")
@@ -118,3 +120,26 @@ r270TawnT1Copula <- function(param = c(-2, 0.5)) {
     fullname = "270 deg rotated Tawn type 1 copula family. Number 134 in VineCopula."
   )
 }
+
+# Pickand's A
+# c-code: Tawn1(double* t, int* n, double* par, double* par2, double* par3, double* out)
+setMethod("A", signature("tawnT1Copula"), function(copula, w) {
+  .C("Tawn2", as.double(w), as.integer(length(w)),
+     as.double(copula@parameters[1]), as.double(copula@parameters[2]),
+     as.double(1), as.double(rep(0, length(w))),
+     PACKAGE = "VineCopula"
+  )[[6]]
+})
+
+# c-code: Tawn1(double* t, int* n, double* par, double* par2, double* par3, double* out)
+setMethod("A", signature("surTawnT1Copula"), function(copula, w) {
+  u <- -expm1(-1 + w)
+  v <- -expm1(-w)
+
+  surA <- .C("Tawn2", as.double(log(v) / log(u * v)), as.integer(length(w)),
+             as.double(copula@parameters[1]), as.double(copula@parameters[2]),
+             as.double(1), as.double(rep(0, length(w))),
+             PACKAGE = "VineCopula"
+  )[[6]]
+  -log(1 - u + 1 - v - 1 + (u * v)^surA)
+})
