@@ -32,6 +32,8 @@
 #'
 #' showClass("BB7Copula")
 NULL
+
+#' @exportClass BB7Copula surBB7Copula r90BB7Copula r270BB7Copula
 generateClass("BB7Copula")
 generateClass("surBB7Copula")
 generateClass("r90BB7Copula")

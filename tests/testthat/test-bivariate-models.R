@@ -12,7 +12,7 @@ models <- c(
   "tawnT2Copula", "surTawnT2Copula", "r90TawnT2Copula", "r270TawnT2Copula"
 )
 
-for (model in models) {
+for (model in models) { # model <- models[1]
   test_that(paste("Bivariate model", model, "works"), {
     expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
 
@@ -36,3 +36,27 @@ for (model in models) {
   })
 }
 
+# inverse Kendall's tau
+
+modelsSngParPosTau <- c("surClaytonCopula", "surGumbelCopula",
+                        "joeBiCopula", "surJoeBiCopula")
+
+for (model in modelsSngParPosTau) { # model <- models[1]
+  test_that(paste("Bivariate model", model, "works"), {
+    expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
+
+    expect_length(iTau(cop, 0.2), 1)
+  })
+}
+
+modelsSngParNegTau <- c("r90ClaytonCopula",  "r270ClaytonCopula",
+                        "r90GumbelCopula", "r270GumbelCopula",
+                        "r90JoeBiCopula", "r270JoeBiCopula")
+
+for (model in modelsSngParNegTau) { # model <- models[1]
+  test_that(paste("Bivariate model", model, "works"), {
+    expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
+
+    expect_length(iTau(cop, -0.2), 1)
+  })
+}

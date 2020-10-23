@@ -135,3 +135,8 @@ BiCopPar2TailDep.copula <- function(copula) {
   bc <- copula2BiCop(copula)
   unlist(VineCopula::BiCopPar2TailDep(bc$family, bc$par, bc$par2))
 }
+
+# metods in copula
+
+# iTau
+BCiTau <- function(copula, tau) VineCopula::BiCopTau2Par(copula@family, tau)

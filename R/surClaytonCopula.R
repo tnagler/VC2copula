@@ -33,6 +33,8 @@
 #' persp(r90ClaytonCopula(-.5), dCopula, zlim = c(0, 10))
 #' persp(r270ClaytonCopula(-.5), dCopula, zlim = c(0, 10))
 NULL
+
+#' @exportClass surClaytonCopula r90ClaytonCopula r270ClaytonCopula
 generateClass("surClaytonCopula")
 generateClass("r90ClaytonCopula")
 generateClass("r270ClaytonCopula")
@@ -95,3 +97,8 @@ r270ClaytonCopula <- function(param = -1) {
     fullname = "270 deg rotated Clayton copula family. Number 33 in VineCopula."
   )
 }
+
+# iTau
+setMethod("iTau", signature = c("r90ClaytonCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("surClaytonCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r270ClaytonCopula", "ANY"), BCiTau)

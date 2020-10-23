@@ -33,6 +33,8 @@
 #'
 #' showClass("tawnT2Copula")
 NULL
+
+#' @exportClass tawnT2Copula surTawnT2Copula r90TawnT2Copula r270TawnT2Copula
 generateClass("tawnT2Copula")
 generateClass("surTawnT2Copula")
 generateClass("r90TawnT2Copula")

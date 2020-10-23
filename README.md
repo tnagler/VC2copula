@@ -15,7 +15,7 @@ but is now provided as a stand-alone version.
 
 ## Installation
 
-You can install the development version of VC2copula from 
+You can install the released version of VC2copula from 
 [CRAN](https://CRAN.R-project.org) with
 
 ``` r
@@ -34,8 +34,7 @@ devtools::install_github("tnagler/VC2copula")
 ### Bivariate copula models
 
 The package exposes classes for all BB- and Tawn families implemented in [VineCopula](http://tnagler.github.io/VineCopula/), including their rotations.
-Additionally, rotated versions of the Clayton and Gumbel copula families are
-exposed. 
+Additionally, rotated versions of the Clayton and Gumbel copula families are exposed. 
 
 #### Example
 

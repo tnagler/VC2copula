@@ -34,6 +34,8 @@
 #' persp(r90GumbelCopula(-5), dCopula, zlim = c(0, 10))
 #' persp(r270GumbelCopula(-5), dCopula, zlim = c(0, 10))
 NULL
+
+#' @exportClass surGumbelCopula r90GumbelCopula r270GumbelCopula
 generateClass("surGumbelCopula")
 generateClass("r90GumbelCopula")
 generateClass("r270GumbelCopula")
@@ -96,3 +98,9 @@ r270GumbelCopula <- function(param = -1) {
       fullname = "270 deg rotated Gumbel copula family. Number 34 in VineCopula."
   )
 }
+
+# iTau
+setMethod("iTau", signature = c("r90GumbelCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("surGumbelCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r270GumbelCopula", "ANY"), BCiTau)
+

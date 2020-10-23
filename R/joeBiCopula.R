@@ -41,6 +41,8 @@
 #'
 #' showClass("surJoeBiCopula")
 NULL
+
+#' @exportClass joeBiCopula surJoeBiCopula r90JoeBiCopula r270JoeBiCopula
 generateClass("joeBiCopula")
 generateClass("surJoeBiCopula")
 generateClass("r90JoeBiCopula")
@@ -128,3 +130,8 @@ r270JoeBiCopula <- function(param = -2) {
     fullname = "270 deg rotated Joe copula family. Number 36 in VineCopula."
   )
 }
+
+setMethod("iTau", signature = c("joeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r90JoeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("surJoeBiCopula", "ANY"), BCiTau)
+setMethod("iTau", signature = c("r270JoeBiCopula", "ANY"), BCiTau)
