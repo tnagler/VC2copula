@@ -127,7 +127,7 @@ setMethod("A", signature("tawnT1Copula"), function(copula, w) {
   .C("Tawn2", as.double(w), as.integer(length(w)),
      as.double(copula@parameters[1]), as.double(copula@parameters[2]),
      as.double(1), as.double(rep(0, length(w))),
-     PACKAGE = "VineCopula"
+     PACKAGE = "VC2copula"
   )[[6]]
 })
 
@@ -139,7 +139,7 @@ setMethod("A", signature("surTawnT1Copula"), function(copula, w) {
   surA <- .C("Tawn2", as.double(log(v) / log(u * v)), as.integer(length(w)),
              as.double(copula@parameters[1]), as.double(copula@parameters[2]),
              as.double(1), as.double(rep(0, length(w))),
-             PACKAGE = "VineCopula"
+             PACKAGE = "VC2copula"
   )[[6]]
   -log(1 - u + 1 - v - 1 + (u * v)^surA)
 })

@@ -1,6 +1,6 @@
 Package: VC2copula
 Title: Extend the 'copula' Package with Families and Models from 'VineCopula'
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     c(person(given = "Thomas",
             family = "Nagler",
@@ -24,6 +24,7 @@ Depends:
 Imports: 
   VineCopula (>= 2.3.0),
   methods
+LinkingTo: VineCopula
 Suggests:
     lattice,
     testthat (>= 2.1.0),
