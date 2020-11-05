@@ -73,8 +73,8 @@ tawnT2Copula <- function(param = c(2, 0.5)) {
     param.names = c("param1", "param2"),
     param.lowbnd = c(1, 0),
     param.upbnd = c(Inf, 1),
-    family = 104,
-    fullname = "Tawn type 2 copula family. Number 104 in VineCopula."
+    family = 204,
+    fullname = "Tawn type 2 copula family. Number 204 in VineCopula."
   )
 }
 
@@ -87,8 +87,8 @@ surTawnT2Copula <- function(param = c(2, 0.5)) {
     param.names = c("param1", "param2"),
     param.lowbnd = c(1, 0),
     param.upbnd = c(Inf, 1),
-    family = 114,
-    fullname = "Survival Tawn type 2 copula family. Number 114 in VineCopula."
+    family = 214,
+    fullname = "Survival Tawn type 2 copula family. Number 214 in VineCopula."
   )
 }
 
@@ -102,8 +102,8 @@ r90TawnT2Copula <- function(param = c(-2, 0.5)) {
     param.names = c("param1", "param2"),
     param.lowbnd = c(-Inf, 0),
     param.upbnd = c(-1, 1),
-    family = 124,
-    fullname = "90 deg rotated Tawn type 2 copula family. Number 124 in VineCopula."
+    family = 224,
+    fullname = "90 deg rotated Tawn type 2 copula family. Number 224 in VineCopula."
   )
 }
 
@@ -116,7 +116,13 @@ r270TawnT2Copula <- function(param = c(-2, 0.5)) {
     param.names = c("param1", "param2"),
     param.lowbnd = c(-Inf, 0),
     param.upbnd = c(-1, 1),
-    family = 134,
-    fullname = "270 deg rotated Tawn type 2 copula family. Number 134 in VineCopula."
+    family = 234,
+    fullname = "270 deg rotated Tawn type 2 copula family. Number 234 in VineCopula."
   )
 }
+
+# fitCopula
+setMethod(fitCopula, "tawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "surTawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "r90TawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "r270TawnT2Copula", BCfitCopula)

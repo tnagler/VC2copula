@@ -120,3 +120,9 @@ r270BB1Copula <- function(param = c(-1, -1)) {
     fullname = "270 deg rotated BB1 copula family. Number 37 in VineCopula."
   )
 }
+
+# fitCopula
+setMethod(fitCopula, "BB1Copula", BCfitCopula)
+setMethod(fitCopula, "surBB1Copula", BCfitCopula)
+setMethod(fitCopula, "r90BB1Copula", BCfitCopula)
+setMethod(fitCopula, "r270BB1Copula", BCfitCopula)

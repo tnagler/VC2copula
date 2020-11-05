@@ -104,3 +104,9 @@ setMethod("iTau", signature = c("r90GumbelCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("surGumbelCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("r270GumbelCopula", "ANY"), BCiTau)
 
+# fitCopula
+setMethod(fitCopula, "surGumbelCopula", BCfitCopula)
+setMethod(fitCopula, "r90GumbelCopula", BCfitCopula)
+setMethod(fitCopula, "r270GumbelCopula", BCfitCopula)
+
+

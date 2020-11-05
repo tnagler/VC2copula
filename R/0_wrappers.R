@@ -41,46 +41,46 @@ BiCop2copula <- function(family, par, par2 = 0, obj = NULL) {
 #' @export
 copulaFromFamilyIndex <- function(family, par, par2 = 0) {
   constr <- switch(paste("fam", family, sep = ""),
-    fam0 = function(par) copula::indepCopula(),
-    fam1 = function(par) copula::normalCopula(par[1]),
-    fam2 = function(par) copula::tCopula(par[1], df = par[2]),
-    fam3 = function(par) copula::claytonCopula(par[1]),
-    fam4 = function(par) copula::gumbelCopula(par[1]),
-    fam5 = function(par) copula::frankCopula(par[1]),
-    fam6 = function(par) joeBiCopula(par[1]),
-    fam7 = BB1Copula,
-    fam8 = BB6Copula,
-    fam9 = BB7Copula,
-    fam10 = BB8Copula,
-    fam13 = function(par) surClaytonCopula(par[1]),
-    fam14 = function(par) surGumbelCopula(par[1]),
-    fam16 = function(par) surJoeBiCopula(par[1]),
-    fam17 = surBB1Copula,
-    fam18 = surBB6Copula,
-    fam19 = surBB7Copula,
-    fam20 = surBB8Copula,
-    fam23 = function(par) r90ClaytonCopula(par[1]),
-    fam24 = function(par) r90GumbelCopula(par[1]),
-    fam26 = function(par) r90JoeBiCopula(par[1]),
-    fam27 = r90BB1Copula,
-    fam28 = r90BB6Copula,
-    fam29 = r90BB7Copula,
-    fam30 = r90BB8Copula,
-    fam33 = function(par) r270ClaytonCopula(par[1]),
-    fam34 = function(par) r270GumbelCopula(par[1]),
-    fam36 = function(par) r270JoeBiCopula(par[1]),
-    fam37 = r270BB1Copula,
-    fam38 = r270BB6Copula,
-    fam39 = r270BB7Copula,
-    fam40 = r270BB8Copula,
-    fam104 = tawnT1Copula,
-    fam114 = surTawnT1Copula,
-    fam124 = r90TawnT1Copula,
-    fam134 = r270TawnT1Copula,
-    fam204 = tawnT2Copula,
-    fam214 = surTawnT2Copula,
-    fam224 = r90TawnT2Copula,
-    fam234 = r270TawnT2Copula
+                   fam0 = function(par) copula::indepCopula(),
+                   fam1 = function(par) copula::normalCopula(par[1]),
+                   fam2 = function(par) copula::tCopula(par[1], df = par[2]),
+                   fam3 = function(par) copula::claytonCopula(par[1]),
+                   fam4 = function(par) copula::gumbelCopula(par[1]),
+                   fam5 = function(par) copula::frankCopula(par[1]),
+                   fam6 = function(par) joeBiCopula(par[1]),
+                   fam7 = BB1Copula,
+                   fam8 = BB6Copula,
+                   fam9 = BB7Copula,
+                   fam10 = BB8Copula,
+                   fam13 = function(par) surClaytonCopula(par[1]),
+                   fam14 = function(par) surGumbelCopula(par[1]),
+                   fam16 = function(par) surJoeBiCopula(par[1]),
+                   fam17 = surBB1Copula,
+                   fam18 = surBB6Copula,
+                   fam19 = surBB7Copula,
+                   fam20 = surBB8Copula,
+                   fam23 = function(par) r90ClaytonCopula(par[1]),
+                   fam24 = function(par) r90GumbelCopula(par[1]),
+                   fam26 = function(par) r90JoeBiCopula(par[1]),
+                   fam27 = r90BB1Copula,
+                   fam28 = r90BB6Copula,
+                   fam29 = r90BB7Copula,
+                   fam30 = r90BB8Copula,
+                   fam33 = function(par) r270ClaytonCopula(par[1]),
+                   fam34 = function(par) r270GumbelCopula(par[1]),
+                   fam36 = function(par) r270JoeBiCopula(par[1]),
+                   fam37 = r270BB1Copula,
+                   fam38 = r270BB6Copula,
+                   fam39 = r270BB7Copula,
+                   fam40 = r270BB8Copula,
+                   fam104 = tawnT1Copula,
+                   fam114 = surTawnT1Copula,
+                   fam124 = r90TawnT1Copula,
+                   fam134 = r270TawnT1Copula,
+                   fam204 = tawnT2Copula,
+                   fam214 = surTawnT2Copula,
+                   fam224 = r90TawnT2Copula,
+                   fam234 = r270TawnT2Copula
   )
   constr(c(par, par2))
 }
@@ -136,7 +136,49 @@ BiCopPar2TailDep.copula <- function(copula) {
   unlist(VineCopula::BiCopPar2TailDep(bc$family, bc$par, bc$par2))
 }
 
-# metods in copula
-
+# methods in copula
 # iTau
 BCiTau <- function(copula, tau) VineCopula::BiCopTau2Par(copula@family, tau)
+
+#' A dedicated method to use the estimation routines from the VineCopula package
+#'
+#' Bivariate copulas are estimated based on \code{\link[VineCopula]{BiCopEst}} and vine copulas through \code{\link[VineCopula]{RVineStructureSelect}} or \code{\link[VineCopula]{RVineCopSelect}} depending on the \code{method} argument.
+#'
+#' @param copula an object of the desired copula class
+#' @param data a matrix holding the U(0,1) distributed data columns
+#' @param method for BIVARIATE copulas either "ml" or "itau" for maximum likelihood estimation or inverse tau estimation (for one parameter families) respectively. See \code{\link[VineCopula]{BiCopEst}} for details. In case of a VINE copulas a list with names entries \code{StructureSelect} (default: FALSE), \code{indeptest} (default: FALSE), \code{familyset} (default: 'NA') and \code{indeptest} (default: FALSE). See \code{\link[VineCopula]{RVineStructureSelect}} or \code{\link[VineCopula]{RVineCopSelect}} for details.
+#'
+#' @return an object of class \code{\link[copula]{fitCopula}} as in the copula package.
+#'
+#' @examples
+#'
+#' u <- rCopula(1000, tawnT1Copula(c(3, 0.5)))
+#'
+#' fitCopula(tawnT1Copula(), u)
+#'
+#' @aliases fitCopula
+#' @name fitCopula
+BCfitCopula <- function(copula, data, method="ml") {
+  stopifnot(method %in% c("ml", "itau"))
+  if (method == "itau") {
+    stopifnot(copula@family %in% c(1,2,3,4,5,6,13,14,16,23,24,26,33,34,36))
+  }
+  if (method == "ml")
+    method <- "mle"
+
+  BCestimate <- VineCopula::BiCopEst(data[,1], data[,2], copula@family,
+                                     method = method)
+
+  new("fitCopula",
+      copula = BiCop2copula(BCestimate),
+      estimate = c(BCestimate$par, ifelse(!is.na(BCestimate$par2),
+                                          BCestimate$par2, NULL)),
+      var.est = matrix(NA),
+      loglik = BCestimate$logLik,
+      nsample = BCestimate$nobs,
+      method = method,
+      call = match.call(),
+      fitting.stats = list(AIC = BCestimate$AIC,
+                           BIC = BCestimate$BIC,
+                           convergence = NA))
+}

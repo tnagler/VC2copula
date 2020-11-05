@@ -143,3 +143,10 @@ setMethod("A", signature("surTawnT1Copula"), function(copula, w) {
   )[[6]]
   -log(1 - u + 1 - v - 1 + (u * v)^surA)
 })
+
+# fitCopula
+setMethod(fitCopula, "tawnT1Copula", BCfitCopula)
+setMethod(fitCopula, "surTawnT1Copula", BCfitCopula)
+setMethod(fitCopula, "r90TawnT1Copula", BCfitCopula)
+setMethod(fitCopula, "r270TawnT1Copula", BCfitCopula)
+
