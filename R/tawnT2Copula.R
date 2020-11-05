@@ -120,3 +120,9 @@ r270TawnT2Copula <- function(param = c(-2, 0.5)) {
     fullname = "270 deg rotated Tawn type 2 copula family. Number 234 in VineCopula."
   )
 }
+
+# fitCopula
+setMethod(fitCopula, "tawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "surTawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "r90TawnT2Copula", BCfitCopula)
+setMethod(fitCopula, "r270TawnT2Copula", BCfitCopula)

@@ -12,22 +12,25 @@ models <- c(
   "tawnT2Copula", "surTawnT2Copula", "r90TawnT2Copula", "r270TawnT2Copula"
 )
 
-for (model in models) { # model <- models[1]
+for (model in models) { # model <- models[31]
   test_that(paste("Bivariate model", model, "works"), {
     expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
 
-    u <- rCopula(2, cop)
-    expect_length(u, 4)
+    u <- rCopula(10, cop)
+    expect_length(u, 20)
+
+    # fitting
+    expect_true(class(fitCopula(cop, u)@copula) == model)
 
     expect_length(dCopula(c(0.1, 0.1), cop), 1)
     expect_length(pCopula(c(0.1, 0.1), cop), 1)
     expect_length(dduCopula(c(0.1, 0.1), cop), 1)
     expect_length(ddvCopula(c(0.1, 0.1), cop), 1)
 
-    expect_length(dCopula(u, cop), 2)
-    expect_length(pCopula(u, cop), 2)
-    expect_length(dduCopula(u, cop), 2)
-    expect_length(ddvCopula(u, cop), 2)
+    expect_length(dCopula(u, cop), 10)
+    expect_length(pCopula(u, cop), 10)
+    expect_length(dduCopula(u, cop), 10)
+    expect_length(ddvCopula(u, cop), 10)
 
     A(cop, 0.5)
     expect_lt(tau(cop), 1)

@@ -102,3 +102,8 @@ r270ClaytonCopula <- function(param = -1) {
 setMethod("iTau", signature = c("r90ClaytonCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("surClaytonCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("r270ClaytonCopula", "ANY"), BCiTau)
+
+# fitCopula
+setMethod(fitCopula, "surClaytonCopula", BCfitCopula)
+setMethod(fitCopula, "r90ClaytonCopula", BCfitCopula)
+setMethod(fitCopula, "r270ClaytonCopula", BCfitCopula)

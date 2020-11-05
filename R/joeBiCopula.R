@@ -131,7 +131,14 @@ r270JoeBiCopula <- function(param = -2) {
   )
 }
 
+# inverse tau
 setMethod("iTau", signature = c("joeBiCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("r90JoeBiCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("surJoeBiCopula", "ANY"), BCiTau)
 setMethod("iTau", signature = c("r270JoeBiCopula", "ANY"), BCiTau)
+
+# fitCopula
+setMethod(fitCopula, "joeBiCopula", BCfitCopula)
+setMethod(fitCopula, "surJoeBiCopula", BCfitCopula)
+setMethod(fitCopula, "r90JoeBiCopula", BCfitCopula)
+setMethod(fitCopula, "r270JoeBiCopula", BCfitCopula)

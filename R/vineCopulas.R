@@ -183,6 +183,7 @@ setMethod("rCopula",
           signature("numeric", "vineCopula"),
           function(n, copula) VineCopula::RVineSim(n, copula@RVM))
 
+# fitCopula
 fitVineCop <- function(copula, data,
                        method = list(StructureSelect = FALSE,
                                      indeptest = FALSE,
