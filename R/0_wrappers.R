@@ -140,8 +140,25 @@ BiCopPar2TailDep.copula <- function(copula) {
 # iTau
 BCiTau <- function(copula, tau) VineCopula::BiCopTau2Par(copula@family, tau)
 
-# fitCopula
-BCfitCopula <- function(copula, data, method="ml", ...) {
+#' A dedicated method to use the estimation routines from the VineCopula package
+#'
+#' Bivariate copulas are estimated based on \code{\link[VineCopula]{BiCopEst}} and vine copulas through \code{\link[VineCopula]{RVineStructureSelect}} or \code{\link[VineCopula]{RVineCopSelect}} depending on the \code{method} argument.
+#'
+#' @param copula an object of the desired copula class
+#' @param data a matrix holding the U(0,1) distributed data columns
+#' @param method for BIVARIATE copulas either "ml" or "itau" for maximum likelihood estimation or inverse tau estimation (for one parameter families) respectively. See \code{\link[VineCopula]{BiCopEst}} for details. In case of a VINE copulas a list with names entries \code{StructureSelect} (default: FALSE), \code{indeptest} (default: FALSE), \code{familyset} (default: 'NA') and \code{indeptest} (default: FALSE). See \code{\link[VineCopula]{RVineStructureSelect}} or \code{\link[VineCopula]{RVineCopSelect}} for details.
+#'
+#' @return an object of class \code{\link[copula]{fitCopula}} as in the copula package.
+#'
+#' @examples
+#'
+#' u <- rCopula(1000, tawnT1Copula(c(3, 0.5)))
+#'
+#' fitCopula(tawnT1Copula(), u)
+#'
+#' @aliases fitCopula
+#' @name fitCopula
+BCfitCopula <- function(copula, data, method="ml") {
   stopifnot(method %in% c("ml", "itau"))
   if (method == "itau") {
     stopifnot(copula@family %in% c(1,2,3,4,5,6,13,14,16,23,24,26,33,34,36))
