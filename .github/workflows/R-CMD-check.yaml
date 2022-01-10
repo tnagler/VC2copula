@@ -53,7 +53,7 @@ jobs:
       - name: Install GSL
         run:   |
           if [ "${{ runner.os }}" == "Linux" ]; then
-            sudo apt-get install --no-install-recommends -y libgsl0-dev
+            sudo apt-get install --no-install-recommends -y libgsl0-dev libcurl4-openssl-dev
           elif [ "${{ runner.os }}" == "macOS" ]; then
             brew install gsl
           fi
