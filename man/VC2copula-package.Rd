@@ -6,10 +6,7 @@
 \alias{VC2copula-package}
 \title{VC2copula: Extend the 'copula' Package with Families and Models from 'VineCopula'}
 \description{
-Provides new classes for (rotated) BB1, BB6, BB7, BB8, and 
-  Tawn copulas, extends the existing Gumbel and Clayton families with 
-  rotations, and allows to set up a vine copula model using the 'copula' API.
-  Corresponding objects from the 'VineCopula' API can easily be converted.
+Provides new classes for (rotated) BB1, BB6, BB7, BB8, and Tawn copulas, extends the existing Gumbel and Clayton families with rotations, and allows to set up a vine copula model using the 'copula' API. Corresponding objects from the 'VineCopula' API can easily be converted.
 }
 \seealso{
 Useful links:

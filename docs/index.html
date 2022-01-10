@@ -22,6 +22,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -34,18 +36,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">VC2copula</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.1.2</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -55,8 +51,8 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/tnagler/VC2copula/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/tnagler/VC2copula/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -72,39 +68,42 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="vc2copula" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#vc2copula" class="anchor"></a>VC2copula</h1></div>
+<div class="section level1">
+<div class="page-header"><h1 id="vc2copula">VC2copula<a class="anchor" aria-label="anchor" href="#vc2copula"></a>
+</h1></div>
 <!-- badges: start -->
 
 <hr>
-<p>VC2copula extends the <a href="https://CRAN.R-project.org/package=copula">copula</a> package with families and models from <a href="http://tnagler.github.io/VineCopula/">VineCopula</a>. This functionality was previously part of <a href="http://tnagler.github.io/VineCopula/">VineCopula</a>, but is now provided as a stand-alone version.</p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of VC2copula from <a href="https://CRAN.R-project.org">CRAN</a> with</p>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"VC2copula"</span>)</pre></div>
+<p>VC2copula extends the <a href="https://CRAN.R-project.org/package=copula" class="external-link">copula</a> package with families and models from <a href="https://tnagler.github.io/VineCopula/" class="external-link">VineCopula</a>. This functionality was previously part of <a href="https://tnagler.github.io/VineCopula/" class="external-link">VineCopula</a>, but is now provided as a stand-alone version.</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the released version of VC2copula from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"VC2copula"</span><span class="op">)</span></code></pre></div>
 <p>and the development version with</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">"tnagler/VC2copula"</span>)</pre></div>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://devtools.r-lib.org/reference/remote-reexports.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"tnagler/VC2copula"</span><span class="op">)</span></code></pre></div>
 <hr>
 </div>
-<div id="functionality" class="section level2">
-<h2 class="hasAnchor">
-<a href="#functionality" class="anchor"></a>Functionality</h2>
-<div id="bivariate-copula-models" class="section level3">
-<h3 class="hasAnchor">
-<a href="#bivariate-copula-models" class="anchor"></a>Bivariate copula models</h3>
-<p>The package exposes classes for all BB- and Tawn families implemented in <a href="http://tnagler.github.io/VineCopula/">VineCopula</a>, including their rotations. Additionally, rotated versions of the Clayton and Gumbel copula families are exposed.</p>
-<div id="example" class="section level4">
-<h4 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h4>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="no">cop</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/BB1Copula.html">BB1Copula</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">1</span>, <span class="fl">1.5</span>))
-<span class="fu">dCopula</span>(<span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>), <span class="no">cop</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="fu">rCopula</span>(<span class="fl">500</span>, <span class="no">cop</span>))</pre></div>
+<div class="section level2">
+<h2 id="functionality">Functionality<a class="anchor" aria-label="anchor" href="#functionality"></a>
+</h2>
+<div class="section level3">
+<h3 id="bivariate-copula-models">Bivariate copula models<a class="anchor" aria-label="anchor" href="#bivariate-copula-models"></a>
+</h3>
+<p>The package exposes classes for all BB- and Tawn families implemented in <a href="http://tnagler.github.io/VineCopula/" class="external-link">VineCopula</a>, including their rotations. Additionally, rotated versions of the Clayton and Gumbel copula families are exposed.</p>
+<div class="section level4">
+<h4 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h4>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">cop</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/BB1Copula.html">BB1Copula</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1.5</span><span class="op">)</span><span class="op">)</span>
+<span class="fu">dCopula</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.5</span>, <span class="fl">0.5</span><span class="op">)</span>, <span class="va">cop</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="fu">rCopula</span><span class="op">(</span><span class="fl">500</span>, <span class="va">cop</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 </div>
-<div id="full-list-of-exposed-classes" class="section level4">
-<h4 class="hasAnchor">
-<a href="#full-list-of-exposed-classes" class="anchor"></a>Full list of exposed classes</h4>
+<div class="section level4">
+<h4 id="full-list-of-exposed-classes">Full list of exposed classes<a class="anchor" aria-label="anchor" href="#full-list-of-exposed-classes"></a>
+</h4>
 <ul>
 <li>
 <code>"BB1Copula"</code>, <code>"surBB1Copula"</code>, <code>"r90BB1Copula"</code>, <code>"r270BB1Copula"</code>
@@ -136,72 +135,83 @@
 </ul>
 </div>
 </div>
-<div id="vine-copula-models" class="section level3">
-<h3 class="hasAnchor">
-<a href="#vine-copula-models" class="anchor"></a>Vine copula models</h3>
+<div class="section level3">
+<h3 id="vine-copula-models">Vine copula models<a class="anchor" aria-label="anchor" href="#vine-copula-models"></a>
+</h3>
 <p>There is one more class <code>vineCopula</code> for vine copula models. You can convert <code>RVineMatrix</code> objects for the VineCopula package or fit new models using only the copula API:</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="st">"daxreturns"</span>, <span class="kw">package</span> <span class="kw">=</span> <span class="st">"VineCopula"</span>)
-<span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span>(<span class="no">daxreturns</span>[, <span class="fl">1</span>:<span class="fl">4</span>])
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"daxreturns"</span>, package <span class="op">=</span> <span class="st">"VineCopula"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html" class="external-link">pairs</a></span><span class="op">(</span><span class="va">daxreturns</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
 
-<span class="no">vine</span> <span class="kw">&lt;-</span> <span class="fu"><a href="reference/vineCopula.html">vineCopula</a></span>(<span class="fu"><a href="https://rdrr.io/r/base/integer.html">as.integer</a></span>(<span class="fl">4</span>))
-<span class="no">fit</span> <span class="kw">&lt;-</span> <span class="fu">fitCopula</span>(<span class="no">vine</span>, <span class="no">daxreturns</span>[, <span class="fl">1</span>:<span class="fl">4</span>])
-<span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html">pairs</a></span>(<span class="fu">rCopula</span>(<span class="fl">500</span>, <span class="no">fit</span>@<span class="kw">copula</span>))</pre></div>
+<span class="va">vine</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/vineCopula.html">vineCopula</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span>
+<span class="va">fit</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/fitCopula.html">fitCopula</a></span><span class="op">(</span><span class="va">vine</span>, <span class="va">daxreturns</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/graphics/pairs.html" class="external-link">pairs</a></span><span class="op">(</span><span class="fu">rCopula</span><span class="op">(</span><span class="fl">500</span>, <span class="va">fit</span><span class="op">@</span><span class="va">copula</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <hr>
 </div>
 </div>
-<div id="documentation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#documentation" class="anchor"></a>Documentation</h2>
-<p>For a full overview of functions and classes, see the <a href="https://tnagler.github.io/VC2copula">package website</a>.</p>
+<div class="section level2">
+<h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
+</h2>
+<p>For a full overview of functions and classes, see the <a href="https://tnagler.github.io/VC2copula/" class="external-link">package website</a>.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=VC2copula">https://​cloud.r-project.org/​package=VC2copula</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/tnagler/VC2copula/">https://​github.com/​tnagler/​VC2copula/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/tnagler/VC2copula/issues">https://​github.com/​tnagler/​VC2copula/​issues</a>
-</li>
-</ul>
-</div>
-<div class="license">
-<h2>License</h2>
-<ul class="list-unstyled">
-<li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></small></li>
-</ul>
-</div>
-<div class="developers">
-<h2>Developers</h2>
-<ul class="list-unstyled">
-<li>Thomas Nagler <br><small class="roles"> Author, maintainer </small>  </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="https://cloud.r-project.org/package=VC2copula" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/tnagler/VC2copula/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/tnagler/VC2copula/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="license">
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://tnagler.github.io/VC2copula/"><img src="https://github.com/tnagler/VC2copula/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://CRAN.R-project.org/package=VC2copula"><img src="https://www.r-pkg.org/badges/version/VC2copula" alt="CRAN status"></a></li>
-<li><a href="https://codecov.io/gh/tnagler/VC2copula/branch/master"><img src="https://codecov.io/gh/tnagler/VC2copula/branch/master/graph/badge.svg" alt="Codecov status"></a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></small></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing VC2copula</a></li>
+</ul>
 </div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Thomas Nagler <br><small class="roles"> Author, maintainer </small>  </li>
+<li><a href="authors.html">More about authors...</a></li>
+</ul>
+</div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://tnagler.github.io/VC2copula/" class="external-link"><img src="https://github.com/tnagler/VC2copula/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://CRAN.R-project.org/package=VC2copula" class="external-link"><img src="https://www.r-pkg.org/badges/version/VC2copula" alt="CRAN status"></a></li>
+<li><a href="https://codecov.io/gh/tnagler/VC2copula/branch/master" class="external-link"><img src="https://codecov.io/gh/tnagler/VC2copula/branch/master/graph/badge.svg" alt="Codecov status"></a></li>
+</ul>
+</div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Thomas Nagler.</p>
+  <p></p>
+<p>Developed by Thomas Nagler.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.1.</p>
 </div>
 
       </footer>
@@ -209,6 +219,8 @@
 
   
 
+
+  
 
   </body>
 </html>
