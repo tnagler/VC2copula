@@ -55,9 +55,9 @@ generateClass <- function(name) {
   }
 
   setClass(name,
-           representation = representation("copula", family = "numeric"),
+           slots = c(family = "numeric"),
            validity = checkValidity,
-           contains = list("copula"))
+           contains = "copula")
 
   setMethod("dCopula", signature("matrix", name), BiCopPDF.copula)
   setMethod("dCopula", signature("numeric", name),

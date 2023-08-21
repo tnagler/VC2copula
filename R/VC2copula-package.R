@@ -10,5 +10,6 @@
 ## usethis namespace: start
 #' @useDynLib VC2copula, .registration = TRUE
 #' @import methods
+#' @import copula
 ## usethis namespace: end
 "_PACKAGE"
