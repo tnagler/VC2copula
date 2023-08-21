@@ -15,7 +15,6 @@ Description: Provides new classes for (rotated) BB1, BB6, BB7, BB8, and
   Corresponding objects from the 'VineCopula' API can easily be converted.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Roxygen: list(markdown = TRUE)
 URL: https://github.com/tnagler/VC2copula
 BugReports: https://github.com/tnagler/VC2copula/issues
