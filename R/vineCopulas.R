@@ -50,14 +50,14 @@ validVineCopula <- function(object) {
 setOldClass("RVineMatrix")
 
 setClass("vineCopula",
-         representation = representation(
+         slots = list(
            copulas = "list",
            dimension = "integer",
            RVM = "RVineMatrix"
          ),
          prototype = prototype(RVM = structure(list(), class = "RVineMatrix")),
          validity = validVineCopula,
-         contains = list("copula")
+         contains = "copula"
 )
 
 # constructor
