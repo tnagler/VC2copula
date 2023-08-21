@@ -9,5 +9,6 @@
 # roxygen namespace tags. Modify with care!
 ## usethis namespace: start
 #' @useDynLib VC2copula, .registration = TRUE
+#' @import methods
 ## usethis namespace: end
-NULL
+"_PACKAGE"

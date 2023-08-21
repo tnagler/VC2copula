@@ -1,3 +1,10 @@
+# VC2copula 0.1.3
+
+BUG FIXES
+
+* fix missing `methods` imports.
+
+
 # VC2copula 0.1.2
 
 BUG FIXES
