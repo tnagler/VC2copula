@@ -5,7 +5,7 @@ models <- c(
   "BB6Copula", "surBB6Copula", "r90BB6Copula", "r270BB6Copula",
   "BB7Copula", "surBB7Copula", "r90BB7Copula", "r270BB7Copula",
   "BB8Copula", "surBB8Copula", "r90BB8Copula", "r270BB8Copula",
-  "indepCopula", "normalCopula",
+  "indepCopula", "normalCopula", "frankCopula", "tCopula",
   "claytonCopula", "surClaytonCopula", "r90ClaytonCopula", "r270ClaytonCopula",
   "gumbelCopula", "surGumbelCopula", "r90GumbelCopula", "r270GumbelCopula",
   "joeBiCopula", "surJoeBiCopula", "r90JoeBiCopula", "r270JoeBiCopula",
@@ -13,15 +13,18 @@ models <- c(
   "tawnT2Copula", "surTawnT2Copula", "r90TawnT2Copula", "r270TawnT2Copula"
 )
 
-base_models <- c("indepCopula", "normalCopula",
-                 "claytonCopula", "gumbelCopula")
+base_models <- c("indepCopula", "normalCopula", "tCopula",
+                 "frankCopula", "claytonCopula", "gumbelCopula")
 
 for (model in models) { # model <- models[31]
   test_that(paste("Bivariate model", model, "works"), {
     expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
 
     if (model %in% setdiff(base_models, "indepCopula")) {
-      cop@parameters <- switch(model, "normalCopula" = 0.2, 2)
+      cop@parameters <- switch(model,
+                               "normalCopula" = 0.2,
+                               "tCopula" = c(0.2, 4),
+                               2)
     }
     u <- rCopula(30, cop)
     expect_length(u, 60)
