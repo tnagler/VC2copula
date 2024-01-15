@@ -19,7 +19,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/tnagler/VC2copula
 BugReports: https://github.com/tnagler/VC2copula/issues
 Depends:
-  copula (>= 0.999-19.1)
+  copula (>= 1.1-2)
 Imports: 
   VineCopula (>= 2.3.0),
   methods
