@@ -85,9 +85,23 @@ copulaFromFamilyIndex <- function(family, par, par2 = 0) {
   constr(c(par, par2))
 }
 
+
+
 copula2BiCop <- function(copula) {
-  family <- copula@family
-  pars <- copula@parameters
+  family <- try(copula@family, silent = TRUE)
+  if (inherits(family, "try-error")) {
+    family <- switch(
+      class(copula),
+      "indepCopula" = 0,
+      "normalCopula" = 1,
+      "tCopula" = 2,
+      "claytonCopula" = 3,
+      "gumbelCopula" = 4,
+      "frankCopula" = 5,
+      NA
+    )
+  }
+  pars <- if (family != 0) copula@parameters else 0
   if (length(pars) == 1) {
     pars <- c(pars, 0)
   }
