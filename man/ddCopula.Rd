@@ -16,8 +16,12 @@
 \alias{dduCopula,numeric,gumbelCopula-method}
 \alias{ddvCopula,matrix,gumbelCopula-method}
 \alias{ddvCopula,numeric,gumbelCopula-method}
+\alias{dduCopula,matrix,claytonCopula-method}
+\alias{dduCopula,numeric,claytonCopula-method}
 \alias{ddvCopula,matrix,claytonCopula-method}
 \alias{ddvCopula,numeric,claytonCopula-method}
+\alias{dduCopula,matrix,indepCopula-method}
+\alias{dduCopula,numeric,indepCopula-method}
 \alias{ddvCopula,matrix,indepCopula-method}
 \alias{ddvCopula,numeric,indepCopula-method}
 \alias{dduCopula,matrix,frankCopula-method}
@@ -52,9 +56,17 @@ dduCopula(u, copula, ...)
 
 \S4method{ddvCopula}{numeric,gumbelCopula}(u, copula, ...)
 
+\S4method{dduCopula}{matrix,claytonCopula}(u, copula)
+
+\S4method{dduCopula}{numeric,claytonCopula}(u, copula, ...)
+
 \S4method{ddvCopula}{matrix,claytonCopula}(u, copula)
 
 \S4method{ddvCopula}{numeric,claytonCopula}(u, copula, ...)
+
+\S4method{dduCopula}{matrix,indepCopula}(u, copula)
+
+\S4method{dduCopula}{numeric,indepCopula}(u, copula, ...)
 
 \S4method{ddvCopula}{matrix,indepCopula}(u, copula)
 
