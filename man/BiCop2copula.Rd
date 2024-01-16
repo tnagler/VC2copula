@@ -28,8 +28,10 @@ corresponding \linkS4class{copula} object.
 }
 \details{
 If the family and parameter specification is stored in a \verb{[BiCop()]} object
-\code{obj}, the alternative version\preformatted{BiCop2copula(u1, u2, obj)
-}
+\code{obj}, the alternative version
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{BiCop2copula(u1, u2, obj)
+}\if{html}{\out{</div>}}
 
 can be used.
 }

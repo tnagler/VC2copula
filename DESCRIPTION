@@ -1,6 +1,6 @@
 Package: VC2copula
 Title: Extend the 'copula' Package with Families and Models from 'VineCopula'
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: 
     c(person(given = "Thomas",
             family = "Nagler",
@@ -19,7 +19,7 @@ Roxygen: list(markdown = TRUE)
 URL: https://github.com/tnagler/VC2copula
 BugReports: https://github.com/tnagler/VC2copula/issues
 Depends:
-  copula (>= 0.999-19.1)
+  copula (>= 1.1-2)
 Imports: 
   VineCopula (>= 2.3.0),
   methods
@@ -28,5 +28,5 @@ Suggests:
     lattice,
     testthat (>= 2.1.0),
     spelling
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.3
 Language: en-US

@@ -5,37 +5,51 @@ models <- c(
   "BB6Copula", "surBB6Copula", "r90BB6Copula", "r270BB6Copula",
   "BB7Copula", "surBB7Copula", "r90BB7Copula", "r270BB7Copula",
   "BB8Copula", "surBB8Copula", "r90BB8Copula", "r270BB8Copula",
-  "surClaytonCopula", "r90ClaytonCopula", "r270ClaytonCopula",
-  "surGumbelCopula", "r90GumbelCopula", "r270GumbelCopula",
+  "indepCopula", "normalCopula", "frankCopula", "tCopula",
+  "claytonCopula", "surClaytonCopula", "r90ClaytonCopula", "r270ClaytonCopula",
+  "gumbelCopula", "surGumbelCopula", "r90GumbelCopula", "r270GumbelCopula",
   "joeBiCopula", "surJoeBiCopula", "r90JoeBiCopula", "r270JoeBiCopula",
   "tawnT1Copula", "surTawnT1Copula", "r90TawnT1Copula", "r270TawnT1Copula",
   "tawnT2Copula", "surTawnT2Copula", "r90TawnT2Copula", "r270TawnT2Copula"
 )
 
+base_models <- c("indepCopula", "normalCopula", "tCopula",
+                 "frankCopula", "claytonCopula", "gumbelCopula")
+
 for (model in models) { # model <- models[31]
   test_that(paste("Bivariate model", model, "works"), {
     expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
 
-    u <- rCopula(10, cop)
-    expect_length(u, 20)
+    if (model %in% setdiff(base_models, "indepCopula")) {
+      cop@parameters <- switch(model,
+                               "normalCopula" = 0.2,
+                               "tCopula" = c(0.2, 4),
+                               2)
+    }
+    u <- rCopula(30, cop)
+    expect_length(u, 60)
 
     # fitting
-    expect_true(class(fitCopula(cop, u)@copula) == model)
+    if (model != "indepCopula") {
+      expect_true(class(fitCopula(cop, u)@copula) == model)
+    }
 
     expect_length(dCopula(c(0.1, 0.1), cop), 1)
     expect_length(pCopula(c(0.1, 0.1), cop), 1)
     expect_length(dduCopula(c(0.1, 0.1), cop), 1)
     expect_length(ddvCopula(c(0.1, 0.1), cop), 1)
 
-    expect_length(dCopula(u, cop), 10)
-    expect_length(pCopula(u, cop), 10)
-    expect_length(dduCopula(u, cop), 10)
-    expect_length(ddvCopula(u, cop), 10)
+    expect_length(dCopula(u, cop), 30)
+    expect_length(pCopula(u, cop), 30)
+    expect_length(dduCopula(u, cop), 30)
+    expect_length(ddvCopula(u, cop), 30)
 
-    A(cop, 0.5)
-    expect_lt(tau(cop), 1)
-    expect_gt(tau(cop), -1)
-    expect_length(lambda(cop), 2)
+    if (!(class(cop) %in% base_models)) {
+      A(cop, 0.5)
+      expect_lt(tau(cop), 1)
+      expect_gt(tau(cop), -1)
+      expect_length(lambda(cop), 2)
+    }
   })
 }
 

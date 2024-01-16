@@ -5,9 +5,9 @@ test_that("Vine copula models work", {
   RVM <- VineCopula::C2RVine(1:3, rep(1, 3), rep(0.5, 3))
   expect_silent(cop <- vineCopula(RVM))
 
-  u <- rCopula(2, cop)
-  expect_equal(dim(u), c(2, 3))
-  expect_length(dCopula(u, cop), 2)
+  u <- rCopula(30, cop)
+  expect_equal(dim(u), c(30, 3))
+  expect_length(dCopula(u, cop), 30)
 
   fitCopula(cop, u)
   fitCopula(cop, u, method = list(StructureSelect = FALSE))
