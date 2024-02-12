@@ -5,7 +5,7 @@ models <- c(
   "BB6Copula", "surBB6Copula", "r90BB6Copula", "r270BB6Copula",
   "BB7Copula", "surBB7Copula", "r90BB7Copula", "r270BB7Copula",
   "BB8Copula", "surBB8Copula", "r90BB8Copula", "r270BB8Copula",
-  "indepCopula", "normalCopula", "frankCopula", "tCopula",
+  "indepCopula", "normalCopula", "frankCopula", #"tCopula",
   "claytonCopula", "surClaytonCopula", "r90ClaytonCopula", "r270ClaytonCopula",
   "gumbelCopula", "surGumbelCopula", "r90GumbelCopula", "r270GumbelCopula",
   "joeBiCopula", "surJoeBiCopula", "r90JoeBiCopula", "r270JoeBiCopula",
