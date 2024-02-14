@@ -114,29 +114,29 @@ vineCopula <- function(RVM, type = "CVine") { # RVM <- 4L
       dimension = as.integer(nrow(RVM$Matrix)),
       RVM = RVM,
       parameters = unlist(
-        sapply(
+        lapply(
           copulas,
           function(x) if(is(x, "indepCopula")) 0 else x@parameters
         )
-      ),
+      ) |> as.numeric(),
       param.names = unlist(
-        sapply(
+        lapply(
           copulas,
           function(x) if(is(x, "indepCopula")) "" else x@param.names
         )
-      ),
+      ) |> as.character(),
       param.lowbnd = unlist(
-        sapply(
+        lapply(
           copulas,
           function(x) if(is(x, "indepCopula")) 0 else x@param.lowbnd
         )
-      ),
+      ) |> as.numeric(),
       param.upbnd = unlist(
-        sapply(
+        lapply(
           copulas,
           function(x) if(is(x, "indepCopula")) 0 else x@param.upbnd
         )
-      ),
+      ) |> as.numeric(),
       fullname = paste("RVine copula family.")
   )
 }

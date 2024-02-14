@@ -16,18 +16,24 @@ models <- c(
 base_models <- c("indepCopula", "normalCopula", "tCopula",
                  "frankCopula", "claytonCopula", "gumbelCopula")
 
-for (model in models) { # model <- models[31]
+for (model in models) {
   test_that(paste("Bivariate model", model, "works"), {
     expect_silent(cop <- eval(parse(text = paste0(model, "()"))))
 
     if (model %in% setdiff(base_models, "indepCopula")) {
       cop@parameters <- switch(model,
-                               "normalCopula" = 0.2,
-                               "tCopula" = c(0.2, 4),
+                               "normalCopula" = 0.4,
+                               "tCopula" = c(0.4, 4),
                                2)
     }
     u <- rCopula(50, cop)
     expect_length(u, 100)
+
+    tau <- cor(u, method = "kendall")[1, 2]
+    if ((grepl("90|270", model) & (tau > 0)) |
+        (!grepl("90|270", model) & (tau < 0))) {
+      u[, 2] <- 1 - u[, 2]
+    }
 
     # fitting
     if (model != "indepCopula") {
