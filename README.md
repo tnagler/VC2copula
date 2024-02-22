@@ -1,7 +1,7 @@
 # VC2copula
 
 <!-- badges: start -->
-[![R build status](https://github.com/tnagler/VC2copula/workflows/R-CMD-check/badge.svg)](https://tnagler.github.io/VC2copula/)
+[![R build status](https://github.com/tnagler/VC2copula/actions/workflows/R-CMD-check.yaml/badge.svg?branch=main)](https://github.com/tnagler/VC2copula/actions)
 [![CRAN status](https://www.r-pkg.org/badges/version/VC2copula)](https://CRAN.R-project.org/package=VC2copula)
 [![Codecov status](https://codecov.io/gh/tnagler/VC2copula/branch/main/graph/badge.svg)](https://app.codecov.io/gh/tnagler/VC2copula)
 <!-- badges: end -->
