@@ -8,7 +8,7 @@ vineCopula(RVM, type = "CVine")
 }
 \arguments{
 \item{RVM}{An object of class \code{RVineMatrix} generated from
-\code{\link{RVineMatrix}} in the package \code{\link{VineCopula-package}} or
+\code{\link[VineCopula]{RVineMatrix}} in the package \code{\link[VineCopula]{VineCopula-package}} or
 an integer (e.g. \code{4L}) defining the dimension (an independent Gaussian
 C-vine of this dimension will be constructed).}
 

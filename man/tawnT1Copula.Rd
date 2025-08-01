@@ -41,7 +41,7 @@ persp(r270TawnT1Copula(), dCopula, zlim = c(0, 10))
 }
 \seealso{
 \code{\link[=tawnT1Copula]{tawnT1Copula()}} and the package
-\code{\link[=VineCopula-package]{VineCopula-package()}} for implementation details.
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package} for implementation details.
 }
 \keyword{copula}
 \keyword{distribution}

@@ -1,20 +1,20 @@
 #' Construction of a Copula Object from a VineCopula Family Index
 #'
 #' A VineCopula family index along with its parameters is used to construct a
-#' corresponding [copula-class] object.
+#' corresponding [copula::copula-class] object.
 #'
-#' If the family and parameter specification is stored in a `[BiCop()]` object
+#' If the family and parameter specification is stored in a `[VineCopula::BiCop()]` object
 #' `obj`, the alternative version
 #' ```
 #' BiCop2copula(u1, u2, obj)
 #' ```
 #' can be used.
-#' @param family a family index as defined in [VineCopula-package()].
+#' @param family a family index as defined in [VineCopula::VineCopula-package].
 #' @param par first parameter.
 #' @param par2 second parameter.
-#' @param obj [BiCop()] object containing the family and parameter specification.
+#' @param obj [VineCopula::BiCop()] object containing the family and parameter specification.
 
-#' @return An object inheriting [copula-class] corresponding to the
+#' @return An object inheriting [copula::copula-class] corresponding to the
 #' specific family.
 #' @aliases copulaFromFamilyIndex
 #' @examples

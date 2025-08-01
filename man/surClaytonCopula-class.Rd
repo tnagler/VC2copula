@@ -39,6 +39,6 @@ persp(r90ClaytonCopula(-.5), dCopula, zlim = c(0, 10))
 persp(r270ClaytonCopula(-.5), dCopula, zlim = c(0, 10))
 }
 \seealso{
-\code{\link[=VineCopula-package]{VineCopula-package()}}
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}
 }
 \keyword{classes}

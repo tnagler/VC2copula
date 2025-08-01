@@ -94,7 +94,7 @@ A vector of the evaluated partial derivatives of the same length as
 rows in \code{u}.
 }
 \description{
-Similar to \code{\link[=dCopula]{dCopula()}} and \code{\link[=pCopula]{pCopula()}} the function
+Similar to \link[copula:Copula]{copula::dCopula} and \link[copula:Copula]{copula::pCopula} the function
 \code{dduCopula} evaluates the partial derivative
 \eqn{\frac{\partial}{\partial u} C(u,v)}{d C(u,v)/du} and the function
 \code{ddvCopula} evaluates the partial derivative

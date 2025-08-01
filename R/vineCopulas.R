@@ -1,7 +1,7 @@
 #' Class \code{"vineCopula"}
 #'
 #' A class representing vine copulas in a object oriented implementations. Many
-#' functions go back to the package \code{\link{VineCopula-package}}
+#' functions go back to the package \code{\link[VineCopula]{VineCopula-package}}
 #'
 #'
 #' @name vineCopula-class
@@ -11,8 +11,7 @@
 #' \code{new("vineCopula", ...)} or through the function
 #' \code{\link{vineCopula}}.
 #' @author Benedikt Graeler
-#' @seealso \code{\link{RVineMatrix}} from package
-#' \code{\link{VineCopula-package}}
+#' @seealso \code{\link[VineCopula]{RVineMatrix}}.
 #' @references Aas, K., C. Czado, A. Frigessi, and H. Bakken (2009).
 #' Pair-copula constructions of multiple dependence Insurance: Mathematics and
 #' Economics 44 (2), 182-198.
@@ -69,7 +68,7 @@ setClass("vineCopula",
 #'
 #'
 #' @param RVM An object of class \code{RVineMatrix} generated from
-#' \code{\link{RVineMatrix}} in the package \code{\link{VineCopula-package}} or
+#' \code{\link[VineCopula]{RVineMatrix}} in the package \code{\link[VineCopula]{VineCopula-package}} or
 #' an integer (e.g. \code{4L}) defining the dimension (an independent Gaussian
 #' C-vine of this dimension will be constructed).
 #' @param type A predefined type if only the dimension is provided and ignored

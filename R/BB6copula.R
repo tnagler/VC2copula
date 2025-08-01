@@ -1,7 +1,7 @@
 #' BB6 copula models
 #'
 #' Wrapper classes representing the BB6, survival BB6, 90 degree and 270 degree
-#' rotated BB6 copula families (Joe 1997) from [VineCopula-package()].
+#' rotated BB6 copula families (Joe 1997) from [VineCopula::VineCopula-package].
 #'
 #' @name BB6Copula-class
 #' @aliases BB6Copula-class dduCopula,numeric,BB6Copula-method
@@ -23,8 +23,8 @@
 #'   functions [BB6Copula()], [surBB6Copula()], [r90BB6Copula()] and
 #'   [r270BB6Copula()].
 #' @seealso See also [BB6Copula-class], [BB7Copula-class], [BB8Copula-class] and
-#'   [joeCopula-class] for further wrapper classes to the
-#'   [VineCopula-package()].
+#'   [joeBiCopula-class] for further wrapper classes to the
+#'   [VineCopula::VineCopula-package].
 #' @references Joe, H., (1997). Multivariate Models and Dependence Concepts.
 #'   Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 #' @keywords classes
@@ -51,7 +51,7 @@ generateClass("r270BB6Copula")
 #' @return One of the respective BB6 copula classes ([BB6Copula-class],
 #'   [surBB6Copula-class], [r90BB6Copula-class], [r270BB6Copula-class]).
 #' @seealso See also [BB6Copula()], [BB7Copula()], [BB8Copula()] and
-#'   [joeCopula()] for further wrapper functions to the [VineCopula-package()].
+#'   [joeBiCopula()] for further wrapper functions to the [VineCopula::VineCopula-package].
 #' @references Joe, H., (1997). Multivariate Models and Dependence Concepts.
 #'   Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 #' @examples

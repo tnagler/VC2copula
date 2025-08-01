@@ -2,8 +2,8 @@
 #'
 #' Wrapper classes representing the bivariate Joe, survival Joe, 90 degree and
 #' 270 degree rotated Joe copula families (Joe 1997) from
-#' [VineCopula-package()]. Note that package
-#' [copula-package()] provides a class [joeCopula-class]
+#' [VineCopula::VineCopula-package]. Note that package
+#' [copula::copula-package()] provides a class [joeBiCopula-class]
 #' as well.
 #'
 #'
@@ -33,7 +33,7 @@
 #' @seealso See also [BB1Copula-class],
 #' [BB6Copula-class], [BB7Copula-class] and
 #' [BB8Copula-class] for further wrapper classes to the
-#' [VineCopula-package()].
+#' [VineCopula::VineCopula-package].
 #' @references Joe, H., (1997). Multivariate Models and Dependence Concepts.
 #' Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 #' @keywords classes
@@ -53,8 +53,8 @@ generateClass("r270JoeBiCopula")
 #'
 #' Constructs an object of the (survival `surJoeBiCopula`, 90 degree
 #' rotated `r90JoeBiCopula` and 270 degree rotated `r270JoeBiCopula`)
-#' family for a given parameter. Note that package [copula-package()]
-#' provides a class [joeCopula-class] as well.
+#' family for a given parameter. Note that package [copula::copula-package()]
+#' provides a class [joeBiCopula-class] as well.
 #'
 #'
 #' @aliases joeBiCopula surJoeBiCopula r90JoeBiCopula r270JoeBiCopula
@@ -65,7 +65,7 @@ generateClass("r270JoeBiCopula")
 #' [r90JoeBiCopula-class], [r270JoeBiCopula-class]).
 #' @seealso See also [BB1Copula()], [BB6Copula()],
 #' [BB7Copula()] and [BB8Copula()] for further wrapper
-#' functions to the [VineCopula-package()].
+#' functions to the [VineCopula::VineCopula-package].
 #' @references Joe, H., (1997). Multivariate Models and Dependence Concepts.
 #' Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 #' @examples

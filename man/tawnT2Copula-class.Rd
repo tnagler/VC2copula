@@ -41,6 +41,6 @@ showClass("tawnT2Copula")
 }
 \seealso{
 \linkS4class{tawnT2Copula} and the package
-\code{\link[=VineCopula-package]{VineCopula-package()}} for implementation details.
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package} for implementation details.
 }
 \keyword{classes}

@@ -28,8 +28,8 @@
 \description{
 Wrapper classes representing the bivariate Joe, survival Joe, 90 degree and
 270 degree rotated Joe copula families (Joe 1997) from
-\code{\link[=VineCopula-package]{VineCopula-package()}}. Note that package
-\code{\link[=copula-package]{copula-package()}} provides a class \linkS4class{joeCopula}
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}. Note that package
+\code{\link[copula:copula-package]{copula::copula-package()}} provides a class \linkS4class{joeBiCopula}
 as well.
 }
 \section{Objects from the Classes}{
@@ -52,6 +52,6 @@ Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 See also \linkS4class{BB1Copula},
 \linkS4class{BB6Copula}, \linkS4class{BB7Copula} and
 \linkS4class{BB8Copula} for further wrapper classes to the
-\code{\link[=VineCopula-package]{VineCopula-package()}}.
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.
 }
 \keyword{classes}

@@ -44,6 +44,6 @@ Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 }
 \seealso{
 See also \code{\link[=BB6Copula]{BB6Copula()}}, \code{\link[=BB7Copula]{BB7Copula()}},
-\code{\link[=BB8Copula]{BB8Copula()}} and \code{\link[=joeCopula]{joeCopula()}} for further wrapper
-functions to the \code{\link[=VineCopula-package]{VineCopula-package()}}.
+\code{\link[=BB8Copula]{BB8Copula()}} and \code{\link[=joeBiCopula]{joeBiCopula()}} for further wrapper
+functions to the \link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.
 }

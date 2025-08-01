@@ -23,7 +23,7 @@
 #' `new("r270ClaytonCopula", ...)` or by the function
 #' [surClaytonCopula()], [r90ClaytonCopula()] and
 #' [r270ClaytonCopula()] respectively.
-#' @seealso [VineCopula-package()]
+#' @seealso [VineCopula::VineCopula-package]
 #' @keywords classes
 #' @examples
 #'
@@ -41,7 +41,7 @@ generateClass("r270ClaytonCopula")
 
 #' Constructors for survival and rotated Clayton Copulas
 #'
-#' These are wrappers to functions from [VineCopula-package()]
+#' These are wrappers to functions from [VineCopula::VineCopula-package]
 #'
 #'
 #' @aliases surClaytonCopula r90ClaytonCopula r270ClaytonCopula

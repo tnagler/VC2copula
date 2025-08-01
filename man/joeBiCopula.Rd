@@ -27,8 +27,8 @@ One of the respective Joe copula classes
 \description{
 Constructs an object of the (survival \code{surJoeBiCopula}, 90 degree
 rotated \code{r90JoeBiCopula} and 270 degree rotated \code{r270JoeBiCopula})
-family for a given parameter. Note that package \code{\link[=copula-package]{copula-package()}}
-provides a class \linkS4class{joeCopula} as well.
+family for a given parameter. Note that package \code{\link[copula:copula-package]{copula::copula-package()}}
+provides a class \linkS4class{joeBiCopula} as well.
 }
 \examples{
 
@@ -45,5 +45,5 @@ Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 \seealso{
 See also \code{\link[=BB1Copula]{BB1Copula()}}, \code{\link[=BB6Copula]{BB6Copula()}},
 \code{\link[=BB7Copula]{BB7Copula()}} and \code{\link[=BB8Copula]{BB8Copula()}} for further wrapper
-functions to the \code{\link[=VineCopula-package]{VineCopula-package()}}.
+functions to the \link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.
 }

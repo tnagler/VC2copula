@@ -24,7 +24,7 @@
 #' `new("r270GumbelCopula", ...)` or by the function
 #' [surGumbelCopula()], [r90GumbelCopula()] and
 #' [r270GumbelCopula()] respectively.
-#' @seealso [VineCopula-package()]
+#' @seealso [VineCopula::VineCopula-package]
 #' @keywords classes
 #' @examples
 #'
@@ -42,7 +42,7 @@ generateClass("r270GumbelCopula")
 
 #' Constructors for survival and rotated Gumbel Copulas
 #'
-#' These are wrappers to functions from [VineCopula-package()]
+#' These are wrappers to functions from [VineCopula::VineCopula-package]
 #'
 #'
 #' @aliases surGumbelCopula r90GumbelCopula r270GumbelCopula

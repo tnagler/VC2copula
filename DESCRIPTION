@@ -28,5 +28,5 @@ LinkingTo: VineCopula
 Suggests:
     lattice,
     testthat (>= 2.1.0)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Language: en-US

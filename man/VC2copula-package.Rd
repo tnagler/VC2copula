@@ -2,7 +2,6 @@
 % Please edit documentation in R/VC2copula-package.R
 \docType{package}
 \name{VC2copula-package}
-\alias{VC2copula}
 \alias{VC2copula-package}
 \title{VC2copula: Extend the 'copula' Package with Families and Models from 'VineCopula'}
 \description{

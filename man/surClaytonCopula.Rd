@@ -21,7 +21,7 @@ An object of class \linkS4class{surClaytonCopula},
 \linkS4class{r270ClaytonCopula} respectively.
 }
 \description{
-These are wrappers to functions from \code{\link[=VineCopula-package]{VineCopula-package()}}
+These are wrappers to functions from \link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}
 }
 \examples{
 

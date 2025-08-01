@@ -7,7 +7,7 @@
 \title{Class \code{"vineCopula"}}
 \description{
 A class representing vine copulas in a object oriented implementations. Many
-functions go back to the package \code{\link{VineCopula-package}}
+functions go back to the package \code{\link[VineCopula]{VineCopula-package}}
 }
 \section{Objects from the Class}{
  Objects can be created by calls of the form
@@ -25,8 +25,7 @@ Pair-copula constructions of multiple dependence Insurance: Mathematics and
 Economics 44 (2), 182-198.
 }
 \seealso{
-\code{\link{RVineMatrix}} from package
-\code{\link{VineCopula-package}}
+\code{\link[VineCopula]{RVineMatrix}}.
 }
 \author{
 Benedikt Graeler

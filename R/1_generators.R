@@ -1,6 +1,6 @@
 #' Partial Derivatives of Copulas
 #'
-#' Similar to [dCopula()] and [pCopula()] the function
+#' Similar to [copula::dCopula] and [copula::pCopula] the function
 #' `dduCopula` evaluates the partial derivative
 #' \eqn{\frac{\partial}{\partial u} C(u,v)}{d C(u,v)/du} and the function
 #' `ddvCopula` evaluates the partial derivative

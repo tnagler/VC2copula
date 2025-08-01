@@ -10,24 +10,24 @@ BiCop2copula(family, par, par2 = 0, obj = NULL)
 copulaFromFamilyIndex(family, par, par2 = 0)
 }
 \arguments{
-\item{family}{a family index as defined in \code{\link[=VineCopula-package]{VineCopula-package()}}.}
+\item{family}{a family index as defined in \link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.}
 
 \item{par}{first parameter.}
 
 \item{par2}{second parameter.}
 
-\item{obj}{\code{\link[=BiCop]{BiCop()}} object containing the family and parameter specification.}
+\item{obj}{\code{\link[VineCopula:BiCop]{VineCopula::BiCop()}} object containing the family and parameter specification.}
 }
 \value{
-An object inheriting \linkS4class{copula} corresponding to the
+An object inheriting \link[copula:copula-class]{copula::copula} corresponding to the
 specific family.
 }
 \description{
 A VineCopula family index along with its parameters is used to construct a
-corresponding \linkS4class{copula} object.
+corresponding \link[copula:copula-class]{copula::copula} object.
 }
 \details{
-If the family and parameter specification is stored in a \verb{[BiCop()]} object
+If the family and parameter specification is stored in a \verb{[VineCopula::BiCop()]} object
 \code{obj}, the alternative version
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{BiCop2copula(u1, u2, obj)

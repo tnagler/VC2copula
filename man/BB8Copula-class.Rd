@@ -27,7 +27,7 @@
 \title{BB8 copula models}
 \description{
 Wrapper classes representing the BB8, survival BB8, 90 degree and 270 degree
-rotated BB8 copula families (Joe 1997) from \code{\link[=VineCopula-package]{VineCopula-package()}}.
+rotated BB8 copula families (Joe 1997) from \link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.
 }
 \section{Objects from the Classes}{
  Objects can be created by calls of the
@@ -47,7 +47,7 @@ Monogra. Stat. Appl. Probab. 73, London: Chapman and Hall.
 }
 \seealso{
 See also \linkS4class{BB8Copula}, \linkS4class{BB8Copula}, \linkS4class{BB8Copula} and
-\linkS4class{joeCopula} for further wrapper classes to the
-\code{\link[=VineCopula-package]{VineCopula-package()}}.
+\linkS4class{joeBiCopula} for further wrapper classes to the
+\link[VineCopula:VineCopula-package]{VineCopula::VineCopula-package}.
 }
 \keyword{classes}

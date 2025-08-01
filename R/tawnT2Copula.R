@@ -27,7 +27,7 @@
 #' [r90TawnT2Copula()] and [r270TawnT2Copula()]
 #' respectively.
 #' @seealso [tawnT2Copula-class] and the package
-#' [VineCopula-package()] for implementation details.
+#' [VineCopula::VineCopula-package] for implementation details.
 #' @keywords classes
 #' @examples
 #'
@@ -55,7 +55,7 @@ generateClass("r270TawnT2Copula")
 #' [r90TawnT2Copula-class],
 #' [r270TawnT2Copula-class]).
 #' @seealso [tawnT2Copula()] and the package
-#' [VineCopula-package()] for implementation details.
+#' [VineCopula::VineCopula-package] for implementation details.
 #' @keywords distribution copula
 #' @examples
 #'
